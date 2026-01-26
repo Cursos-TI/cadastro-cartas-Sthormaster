@@ -8,8 +8,8 @@ int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
 
   int populacao1, populacao2, populacao3, turismo1, turismo2, turismo3;
-  float area1, area2, area3, pib1, pib2, pib3;
-  char estado1[2], estado2[2], estado3[2], nome1[25], nome2[25], nome3[25], codigo1[3], codigo2[3], codigo3[3];
+  float area1, area2, area3, pib1, pib2, pib3, densidade1, densidade2, capita1, capita2;
+  char estado1[3], estado2[3], nome1[25], nome2[25], codigo1[5], codigo2[5];
 
   printf("Vamos cadastrar as caratas: \n");
 
@@ -66,40 +66,19 @@ int main() {
 
   printf("\n");//Quebra de linha para separar e ficar mais organizado
 
-  // Carta 3
-  printf("Carta 3: \n\n");
-
-  printf("Nome: ");
-  scanf("%s", nome3);
-
-  printf("Estado: ");
-  scanf("%s", estado3);
-
-  printf("Código: ");
-  scanf("%s", codigo3);
-
-  printf("População: ");
-  scanf("%d", &populacao3);
-
-  printf("Área: ");
-  scanf("%f", &area3);
-
-  printf("PIB: ");
-  scanf("%f", &pib3);
-
-  printf("Pontos turísticos: ");
-  scanf("%d", &turismo3);
-
-  printf("\n");//Quebra de linha para separar e ficar mais organizado
-
-  // Área para exibição dos dados da cidade
-
-  printf("Carta 1:\n\nNome: %s\nEstado: %s\nCódigo: %s\nPopulação: %d\nÁrea: %.2fKm²\nPIB: R$%.2f\nPontos turísticos: %d\n\n", nome1, estado1, codigo1, populacao1, area1, pib1, turismo1);
-
-  printf("Carta 2:\n\nNome: %s\nEstado: %s\nCódigo: %s\nPopulação: %d\nÁrea: %.2fKm²\nPIB: R$%.2f\nPontos turísticos: %d\n\n", nome2, estado2, codigo2, populacao2, area2, pib2, turismo2);
-
-  printf("Carta 3:\n\nNome: %s\nEstado: %s\nCódigo: %s\nPopulação: %d\nÁrea: %.2fKm²\nPIB: R$%.2f\nPontos turísticos: %d\n\n", nome3, estado3, codigo3, populacao3, area3, pib3, turismo3);
+  //Calculando caracteristicas para comparação
+//Carta1
+        densidade1 = (float) populacao1 / area1;
+        capita1 = (float) pib1 / populacao1;
+//Carta2
+        densidade2 = (float) populacao2 / area2;
+        capita2 = (float) pib2 / populacao2;
 
 
-return 0;
+  //Exibindo os atributos das cartas
+        printf("Carta 1:\n\nNome: %s\nEstado: %s\nCódigo: %s\nPopulação: %d\nÁrea: %.2fKm²\nPIB: R$%.2f Milhões\nPontos turísticos: %d\nDensinade Populacional: %.2f Hab/Km²\nPIB Per Capta: R$%.2f\n\n", nome1, estado1, codigo1, populacao1, area1, pib1, turismo1, densidade1, capita1);
+
+        printf("Carta 2:\n\nNome: %s\nEstado: %s\nCódigo: %s\nPopulação: %d\nÁrea: %.2fKm²\nPIB: R$%.2f Milhões\nPontos turísticos: %d\nDensinade Populacional: %.2f Hab/Km²\nPIB Per Capta: R$%.2f\n\n", nome2, estado2, codigo2, populacao2, area2, pib2, turismo2, densidade2, capita2);
+
+  return 0;
 } 
