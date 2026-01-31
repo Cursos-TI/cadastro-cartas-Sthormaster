@@ -24,7 +24,7 @@ int main() {
   printf("Estado: ");
   scanf("%s", estado1);
 
-  printf("Código: ");
+  printf("Número: ");//Resolvi solicitar "Número" ao invés de "Código", assim gero o Código a frente com a junção do estado1 + o codigo1
   scanf("%s", codigo1);
 
   printf("População: ");
@@ -50,7 +50,7 @@ int main() {
   printf("Estado: ");
   scanf("%s", estado2);
 
-  printf("Código: ");
+  printf("Número: "); //Resolvi solicitar "Número" ao invés de "Código", assim gero o Código a frente com a junção do estado2 = o codigo2
   scanf("%s", codigo2);
 
   printf("População: ");
@@ -78,33 +78,20 @@ int main() {
         super2 = (float) (populacao2 + area2 + turismo2 + pib2 + capita2) / densidade2;
 
   //Exibindo os atributos das cartas
-        printf("Carta 1:\n\nNome: %s\nEstado: %s\nCódigo: %s\nPopulação: %lu Habitantes\nÁrea: %.2fKm²\nPIB: R$%.2f\nPontos Turísticos: %u\nDensinade Populacional: %.2f Hab/Km²\nPIB Per Capta: R$%.2f\nSuper Poder: %.2f\n\n", nome1, estado1, codigo1, populacao1, area1, pib1, turismo1, densidade1, capita1, super1);
+        printf("Carta 1:\n\nNome: %s\nEstado: %s\nCódigo: %s%s\nPopulação: %lu Habitantes\nÁrea: %.2fKm²\nPIB: R$%.2f\nPontos Turísticos: %u\nDensinade Populacional: %.2f Hab/Km²\nPIB Per Capta: R$%.2f\nSuper Poder: %.2f\n\n", nome1, estado1, estado1, codigo1, populacao1, area1, pib1, turismo1, densidade1, capita1, super1);
 
-        printf("Carta 2:\n\nNome: %s\nEstado: %s\nCódigo: %s\nPopulação: %lu Habitantes\nÁrea: %.2fKm²\nPIB: R$%.2f\nPontos Turísticos: %u\nDensinade Populacional: %.2f Hab/Km²\nPIB Per Capta: R$%.2f\nSuper Poder: %.2f\n\n", nome2, estado2, codigo2, populacao2, area2, pib2, turismo2, densidade2, capita2, super2);
+        printf("Carta 2:\n\nNome: %s\nEstado: %s\nCódigo: %s%s\nPopulação: %lu Habitantes\nÁrea: %.2fKm²\nPIB: R$%.2f\nPontos Turísticos: %u\nDensinade Populacional: %.2f Hab/Km²\nPIB Per Capta: R$%.2f\nSuper Poder: %.2f\n\n", nome2, estado2, estado2, codigo2, populacao2, area2, pib2, turismo2, densidade2, capita2, super2);
 
 //Realizando comparações entre as cartas
-        printf("\nComparações entre as cartas:\n\n");
-//Usei apenas uma variável "resultado" para armazenar os resultados das comparações, pois o resultado é atualizado a cada comparação com o valor booleano (0 ou 1) exibindo o vencedor correto!
-        resultado = (populacao1 > populacao2);
-        printf("População: %lu\n", resultado);
+        printf("Comparações entre as cartas:\n\n");
 
-        resultado = (area1 > area2);
-        printf("Área: %lu\n", resultado);
-
-        resultado = (pib1 > pib2);
-        printf("PIB: %lu\n", resultado);
-
-        resultado = (turismo1 > turismo2);
-        printf("Pontos Turísticos: %lu\n", resultado);
-
-        resultado = (densidade1 > densidade2);
-        printf("Densidade Populacional: %lu\n", resultado);
-
-        resultado = (capita1 > capita2);
-        printf("PIB Per Capta: %lu\n", resultado);
-
-        resultado = (super1 > super2);
-        printf("Super Poder: %lu\n\n", resultado);
+        printf("Carta 1 - %s (%s): %.2f\n",nome1, estado1, super1);
+        printf("Carta 2 - %s (%s): %.2f\n",nome2, estado2, super2);
+        if (super1 > super2){
+            printf("Resultado: Carta 1 venceu!\n\n");
+        } else {
+            printf("Resultado: Carta 2 venceu!\n\n");
+        }
 
         return 0;
 }
