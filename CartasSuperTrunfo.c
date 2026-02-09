@@ -149,10 +149,10 @@ int main() {
                 break;
             case 5:
                 printf("Você escolheu o atributo Densidade Populacional!\n");
-                if (densidade1 > densidade2){
+                if (densidade1 < densidade2){
                     printf("Carta 1: %s\nDensidade Populacional: %.2f Hab/Km²\nCarta 2: %s\nDensidade Populacional: %.2f Hab/Km²\n", nome1, densidade1, nome2, densidade2);
                     printf("### Carta 1 Venceu! ###\n");
-                }else if (densidade1 < densidade2){
+                }else if (densidade1 > densidade2){
                     printf("Carta 1: %s\nDensidade Populacional: %.2f Hab/Km²\nCarta 2: %s\nDensidade Populacional: %.2f Hab/Km²\n", nome1, densidade1, nome2, densidade2);
                     printf("### Carta 2 Venceu! ###\n");
                 } else {
